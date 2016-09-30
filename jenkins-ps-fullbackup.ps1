@@ -1,5 +1,5 @@
 $Date = Get-Date -Format dd.mm.yyyy
-$Source = "C:\Users\sw_blazer\.jenkins"
+$Source = "C:\Users\user-name\.jenkins"
 $Destination = "D:\Jenkins-PowerShell-Backups\Jenkins-FullBackup"
 $BackupFile = "$Destination\$Date"
 $Path = test-path $BackupFile
