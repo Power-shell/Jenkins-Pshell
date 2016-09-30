@@ -1,7 +1,7 @@
 @echo off
 set AltDate_=%date:~4,2%%date:~7,2%%date:~10,4%_%time:~0,2%%time:~3,2%%time:~6,2%
 set Date_=%date:/=-%
-set Source="C:\Users\sw_blazer\.jenkins"
+set Source="C:\Users\jenkins-user\.jenkins"
 set Destination="D:\Jenkins-Backup\RoboCopy\%Date_%"
 set Backup="D:\Jenkins-Backup\RoboCopy\%AltDate_%"
 mkdir %Destination%
