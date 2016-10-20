@@ -8,8 +8,8 @@ robocopy source destination /E /ZB /DCOPY:T /COPYALL /R:1 /W:1 /V /TEE /LOG:Robo
 
 Here's what the switches mean:
 
-source :: Source Directory (drive:\path or \\server\share\path).\n
-destination :: Destination Dir  (drive:\path or \\server\share\path).\n
+source :: Source Directory (drive:\path or \\server\share\path)./n
+destination :: Destination Dir  (drive:\path or \\server\share\path)./n
 /E :: copy subdirectories, including Empty ones.
 /ZB :: use restartable mode; if access denied use Backup mode.
 /DCOPY:T :: COPY Directory Timestamps.
