@@ -1,11 +1,13 @@
 @echo off
+set srcDate=%date:~4,2%-%date:~7,2%-%date:~10,4%
 set AltDate_=%date:~4,2%%date:~7,2%%date:~10,4%_%time:~0,2%%time:~3,2%%time:~6,2%
 set Date_=%date:/=-%
-set Source="C:\Users\jenkins-user\.jenkins"
-set Destination="D:\Jenkins-Backup\RoboCopy\%Date_%"
-set Backup="D:\Jenkins-Backup\RoboCopy\%AltDate_%"
+set Source="//JENKINS-SVR10/Users/JENKINS-BACKUP-DND\Full\%srcDate%"
+set Destination="D:\Jenkins-SVR10\%srcDate%"
+
 mkdir %Destination%
-robocopy /it /v /r:1 /w:10 /maxage:1 /tee /XA:H "%Source%" "%Destination%"
-mkdir %Backup%
-XCopy %Destination% %Backup% /s /e /h
+robocopy "%Source%" "%Destination%" /E /R:1 /W:1 /V /TEE /LOG:Robocopy.log
+ForFiles /P %Destination% /D -10 /C "CMD /C if @ISDIR==TRUE echo RD /Q @FILE &RD /Q /S @FILE"
 @echo on
+echo "Build Successful"
+exit 0
