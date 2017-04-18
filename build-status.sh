@@ -1,4 +1,5 @@
 #!/bin/bash
+#Check Jenkins for build status via a shell script
 
 CONSOLE_RED="\033[2;31m"
 CONSOLE_GREEN="\033[2;32m"
